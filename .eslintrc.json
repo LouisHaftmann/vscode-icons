@@ -11,7 +11,6 @@
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
-    "prettier/@typescript-eslint",
     "plugin:prettier/recommended"
   ],
   "ignorePatterns": [
@@ -66,10 +65,10 @@
       }
     ],
     "@typescript-eslint/no-empty-function": "error",
-    "@typescript-eslint/no-parameter-properties": [
+    "@typescript-eslint/parameter-properties": [
       "error",
       {
-        "allows": ["private"]
+        "allow": ["private"]
       }
     ],
     "@typescript-eslint/no-use-before-define": "error",
@@ -85,6 +84,13 @@
     ],
     "@typescript-eslint/semi": "error",
     "@typescript-eslint/unified-signatures": "error",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
     "import/no-unresolved": [
       "error",
       {
@@ -186,5 +192,10 @@
         "markers": ["#region", "#endregion"]
       }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts"]
+    }
+  ]
 }
